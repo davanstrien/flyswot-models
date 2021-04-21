@@ -4,7 +4,7 @@ flyswot models
 
 .. raw:: html
 
-   <p align="centre"><img alt="logo" src="11236507773_7c52eefc83_o.png" width="25%" /></p>
+   <p align="centre"><img alt="logo" src="_static/11236507773_7c52eefc83_o.png" width="25%" /></p>
 
 tl;dr 
 -----
