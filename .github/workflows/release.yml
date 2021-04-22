@@ -9,8 +9,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install onnx
+        run: |
+            pip install onnx
+      - name: check files exist
+        run: |
+          pip install onnx
+          from pathlib import Path
+          model_dir = Path('model')
+          assert model_dir.exists() and model_dir.is_dir() ,  'Did not find model directory!'
+          assert 'vocab.txt' in files, 'Did not find a vocab.txt file'
+          assert 'modelcard.md' in files,  'Did not find a model card in the model directory'
+          assert '2021-04-21-model.onnx' in files, 'Did not find onnx model in the model directory!'
+
+          print('checking model onnx model...')
+          f = list(model_dir.rglob("*.onnx"))[0]
+          model = onnx.load(f)
+          onnx.checker.check_model(model, full_check=True)
+        shell: python
+
       - name: Get current time
         uses: 1466587594/get-current-time@v2
         id: current-time
