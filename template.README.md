@@ -1,28 +1,14 @@
----
-language: 
-- 
--
-thumbnail: 
-tags:
-- 
--
-- 
-license: 
-datasets:
-- 
--
-metrics:
-- 
--
----
-
-# MyModelName
+# flyswot
 
 ## Model description
 
 You can embed local or remote images using `![](...)`
 
 ## Intended uses & limitations
+
+tl;dr: don't use this yet...
+
+- This model is trained using relatively small training data. It also has not been extensively evaluated across images coming from different types of manuscript. 
 
 #### How to use
 
@@ -45,10 +31,5 @@ Preprocessing, hardware used, hyperparameters...
 
 ## Eval results
 
-### BibTeX entry and citation info
 
-```bibtex
-@inproceedings{...,
-  year={2020}
-}
-```
+
