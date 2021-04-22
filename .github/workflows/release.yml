@@ -16,10 +16,9 @@ jobs:
           python-version: 3.7
       - name: Install onnx
         run: |
-            pip install onnx
+          pip install onnx
       - name: check files exist
         run: |
-          pip install onnx
           from pathlib import Path
           model_dir = Path('model')
           assert model_dir.exists() and model_dir.is_dir() ,  'Did not find model directory!'
