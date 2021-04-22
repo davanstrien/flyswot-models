@@ -1,0 +1,35 @@
+name: create model release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get current time
+        uses: 1466587594/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYYMMDD
+      - name: Use current time
+        env:
+          TIME: "${{ steps.current-time.outputs.formattedTime }}"
+        run: echo $TIME 
+      - uses: papeloto/action-zip@v1
+        with:
+          files: model/
+          recursive: false
+          dest: ${{ steps.current-time.outputs.formattedTime }}.zip
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.current-time.outputs.formattedTime }}.zip
+          name:  ${{ steps.current-time.outputs.formattedTime }}
+          tag_name:  ${{ steps.current-time.outputs.formattedTime }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
