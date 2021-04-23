@@ -17,14 +17,10 @@ What is flyswot?
 flyswot is a `command line tool <https://en.wikipedia.org/wiki/Command-line_interface>`_ for detecting whether an image depicts a flysheet or another part of a manuscript. The tool is intended to **support** the ingest of digitsed content into new systems by flagging things for a human to check. It is currently not being used to make automated decisions. You can read more about the tool in the `flyswot repository <https://github.com/davanstrien/flyswot>`_
 
 
-These models
-------------
+The models
+----------
 
-
-Metadata
-^^^^^^^^
-
-
+TODO
 
 
 Credits
