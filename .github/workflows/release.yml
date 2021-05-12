@@ -20,8 +20,11 @@ jobs:
       - name: check files exist
         run: |
           from pathlib import Path
+          import os
+          import onnx
           model_dir = Path('model')
           assert model_dir.exists() and model_dir.is_dir() ,  'Did not find model directory!'
+          files = os.listdir(model_dir)
           assert 'vocab.txt' in files, 'Did not find a vocab.txt file'
           assert 'modelcard.md' in files,  'Did not find a model card in the model directory'
           assert '2021-04-21-model.onnx' in files, 'Did not find onnx model in the model directory!'
