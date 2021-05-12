@@ -19,6 +19,7 @@ jobs:
       run: |
         from pathlib import Path
         import os
+        import onnx
         model_dir = Path('model')
         assert model_dir.exists() and model_dir.is_dir() ,  'Did not find model directory!'
         files = os.listdir(model_dir)
