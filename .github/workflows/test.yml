@@ -25,8 +25,9 @@ jobs:
         files = os.listdir(model_dir)
         assert 'vocab.txt' in files, 'Did not find a vocab.txt file'
         assert 'modelcard.md' in files,  'Did not find a model card in the model directory'
-        assert '2021-04-21-model.onnx' in files, 'Did not find onnx model in the model directory!'
-
+        suffixes = [Path(file).suffix for file in files]
+        assert '.onnx' in suffixes, 'Did not find onnx model in the model directory!'
+        
         print('checking model onnx model...')
         f = list(model_dir.rglob("*.onnx"))[0]
         model = onnx.load(f)
