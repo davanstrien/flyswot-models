@@ -1,14 +1,11 @@
 flysheet
 other
 |
-Box
-Carrying case or wrapper
-Control shot
-Material wrapper
-Original bindings
-Other papers letters cards
-Scroll images
-Second foliation sequence
-cover
-edge
-flysheet
+CONTAINER
+CONTROL SHOT
+COVER
+EDGE + SPINE
+FLYSHEET
+OTHER
+PAGE + FOLIO
+SCROLL
